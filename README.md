@@ -39,7 +39,7 @@ The hopper's name determines what items it will allow or block. You can use the 
 ### 4. Example Names
 - `diamond` — Only allows diamonds.
 - `x:stone` — Excludes stone.
-- `diamond|x:stone` — Allows diamonds, excludes stone.
+- `c:stone|x:smooth_stone` — Allows anything with "stone" in the name, excludes smooth stone.
 - `s:iron` — Allows items starting with "iron" (e.g., iron_ingot, iron_block).
 - `c:ingot` — Allows any item with "ingot" as part of its name.
 
