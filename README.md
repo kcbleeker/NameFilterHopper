@@ -9,7 +9,7 @@ A Minecraft Paper plugin that allows you to control what items a hopper can pick
 ## How to Use
 
 ### 1. Install the Plugin
-- Place the `namefilterhopper-1.2.jar` file into your server's `plugins` folder.
+- Place the `namefilterhopper-<version>.jar` file into your server's `plugins` folder.
 - Start or reload your Paper server.
 
 ### 2. Naming a Hopper
