@@ -12,11 +12,7 @@ A Minecraft Paper plugin that allows you to control what items a hopper can pick
 - Place the `namefilterhopper-<version>.jar` file into your server's `plugins` folder.
 - Start or reload your Paper server.
 
-### 2. Naming a Hopper
-- Use an anvil to give a hopper item a custom name before placing it in the world.
-- Place the named hopper in the world. The name you gave it will be used for filtering.
-
-### 3. Setting Up Filters
+### 2. Setting Up Filters
 The hopper's name determines what items it will allow or block. You can use the following formats:
 
 #### Allow Only Specific Items
@@ -36,19 +32,19 @@ The hopper's name determines what items it will allow or block. You can use the 
 - Use `n:` to exclude items that have a string as part of their name.
 - Example: `n:log` — Excludes any item with "log" as part of its name.
 
-### 4. Example Names
+### 3. Example Names
 - `diamond` — Only allows diamonds.
 - `x:stone` — Excludes stone.
 - `c:stone|x:smooth_stone` — Allows anything with "stone" in the name, excludes smooth stone.
 - `s:iron` — Allows items starting with "iron" (e.g., iron_ingot, iron_block).
 - `c:ingot` — Allows any item with "ingot" as part of its name.
 
-### 5. In-Game Usage
+### 4. In-Game Usage
 - Name a hopper item using an anvil, then place it in the world.
 - Once placed, the hopper will automatically filter items according to its name.
 - No commands are required. Just name the hopper before placing it and it will work!
 
-### 6. How the Hopper Handles Blocked Items
+### 5. How the Hopper Handles Blocked Items
 If your hopper tries to move an item that isn't allowed by its name filter, it will look through the rest of its inventory and try to move a different item that is allowed. This way, your hopper doesn't get stuck and can still move other items that match its filter.
 
 ## Notes
