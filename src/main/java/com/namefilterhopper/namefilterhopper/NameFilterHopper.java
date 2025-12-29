@@ -15,6 +15,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 import org.bukkit.event.inventory.InventoryPickupItemEvent;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+
 public class NameFilterHopper extends JavaPlugin implements Listener {
     public Logger log = Bukkit.getLogger();
 
@@ -98,7 +101,10 @@ public class NameFilterHopper extends JavaPlugin implements Listener {
     }
 
     private boolean mustPrevent(String itemName, String hopperName) {
-        if (hopperName == null || hopperName.isEmpty()) return false;
+        if (hopperName == null || hopperName.isEmpty()) {
+            return false;
+        }
+
         if (hopperName.indexOf('|') == -1) {
             if (hasExclusionInName(hopperName)) {
                 return mustPreventSingleItemName(itemName, hopperName);
@@ -106,9 +112,11 @@ public class NameFilterHopper extends JavaPlugin implements Listener {
                 return !mustAllowSingleItemName(itemName, hopperName);
             }
         }
+
         String[] filterList = hopperName.split("\\|");
         boolean canAllow = false;
         boolean hasAllowableList = hasAllowables(filterList);
+
         for (String filterName : filterList) {
             if (mustPreventSingleItemName(itemName, filterName)) {
                 return true;
@@ -191,16 +199,27 @@ public class NameFilterHopper extends JavaPlugin implements Listener {
     }
 
     private String getHopperName(Hopper hopper){
-        String name = ((Nameable)hopper).getCustomName();
-        return name == null ? "" : name.toLowerCase();
+        Nameable nameable = ((Nameable)hopper);
+
+        // Try new Component API first (1.21.11+)
+        Component customNameComponent = nameable.customName();
+        if (customNameComponent != null) {
+            String plainText = PlainTextComponentSerializer.plainText().serialize(customNameComponent);
+            return plainText.toLowerCase();
+        }
+
+        // Fall back to deprecated String API (old hoppers)
+        String customNameString = nameable.getCustomName();
+        if (customNameString != null) {
+            return customNameString.toLowerCase();
+        }
+
+        return "";
     }
 
     private boolean isNamedHopper(InventoryHolder holder){
         if (holder instanceof Hopper) {
-            Nameable block = ((Hopper)holder);
-            if(Objects.nonNull(block.getCustomName())){
-                return true;
-            }
+            return !getHopperName((Hopper)holder).isEmpty();
         }
         return false;
     }

@@ -1,6 +1,6 @@
 name: NameFilterHopper
-version: 1.3
+version: 1.4
 main: com.namefilterhopper.namefilterhopper.NameFilterHopper
 description: Minecraft Paper plugin to filter hopper items based on names
 author: kcbleeker
-api-version: '1.20.6'
+api-version: '1.21'
