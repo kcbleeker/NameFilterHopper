@@ -1,6 +1,6 @@
 # NameFilterHopper
 
-A Minecraft Paper plugin that allows you to control what items a hopper can pick up or move, based on the hopper's custom name.
+A Minecraft Paper plugin that allows you to control what items a hopper can pick up or move, based on the hopper's custom name. No commands needed!
 
 ![Named Hopper](images/hopper_name.png)
 
