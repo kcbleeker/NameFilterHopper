@@ -2,6 +2,10 @@
 
 A Minecraft Paper plugin that allows you to control what items a hopper can pick up or move, based on the hopper's custom name.
 
+![Named Hopper](images/hopper_name.png)
+
+![Filtered Items](images/filtered_items_soul_sand.png)
+
 ## Features
 - Filter items that hoppers can pick up or transfer using custom names.
 - Use simple text or special prefixes in the hopper's name to allow or block specific items.
