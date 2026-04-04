@@ -1,2 +1,9 @@
-# Ignore Maven build output
-/target/
+# Ignore Gradle and build output
+.gradle/
+build/
+.idea/
+*.iml
+
+# Ignore OS files
+.DS_Store
+.vscode/

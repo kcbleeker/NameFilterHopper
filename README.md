@@ -1,10 +1,26 @@
 # NameFilterHopper
 
+A PaperMC plugin that filters item names passing through hoppers.
+
 A Minecraft Paper plugin that allows you to control what items a hopper can pick up or move, based on the hopper's custom name. No commands needed!
 
 ![Named Hopper](images/hopper_name.png)
 
 ![Filtered Items](images/filtered_items_soul_sand.png)
+
+## Building
+
+**Prerequisites:** Java 8+ (JDK)
+
+The Gradle wrapper is bundled — no separate Gradle installation needed.
+
+```bash
+./gradlew build
+```
+
+Output jar: `build/libs/namefilterhopper.jar`
+
+**IDE:** Import as a Gradle project in IntelliJ IDEA or VS Code with the Java extension pack.
 
 ## Features
 - Filter items that hoppers can pick up or transfer using custom names.
