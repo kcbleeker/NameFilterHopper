@@ -1,6 +1,7 @@
 # Ignore Gradle and build output
 .gradle/
 build/
+target/
 .idea/
 *.iml
 
