@@ -3,4 +3,4 @@ version: ${version}
 main: com.namefilterhopper.namefilterhopper.NameFilterHopper
 description: Minecraft Paper plugin to filter hopper items based on names
 author: kcbleeker
-api-version: '1.21'
+api-version: '26.2'
