@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "com.namefilterhopper"
-version = "26.2.0.1"
+version = "26.2.0.1+paper26.1"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_25
@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:26.2.build.+")
+    compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")
 }
 
 tasks.processResources {
